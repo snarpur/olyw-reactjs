@@ -1,0 +1,40 @@
+{
+  "location":                      "stöð",
+  "year":                          "ár",
+  "month":                         "mán",
+  "averageTemperature":            "t",
+  "averageHighTemperature":        "tx",
+  "higestTemperature":             "txx",
+  "dateOfHighestTemperature":      "txxD1",
+  "averageLowTemperature":         "tn",
+  "lowestTemperature":             "tnn",
+  "dateOfLowestTemperature":       "tnnD1",
+  "averageHumidity":               "rh",
+  "totalPercipitation":            "r",
+  "highestPercipitation":          "rx",
+  "dateOfHighestPercipitation":    "rxD1",
+  "averagePressure":               "p",
+  "averageCloud":                  "n",
+  "hoursOfSunshine":               "sun",
+  "averageWind":                    "f"
+}
+
+rails generate model report 
+location:integer 
+year:integer 
+month:integer 
+average_temperature:decimal 
+average_high_temperature:decimal 
+highest_temperature:decimal 
+date_of_highest_temperature:integer 
+average_low_temperature:decimal 
+lowest_temperature:decimal 
+date_of_lowest_temperature:integer 
+average_humidity:decimal 
+total_percipitation:decimal 
+highest_percipitation:decimal 
+date_of_highest_percipitation:integer
+average_pressure:decimal 
+average_cloud:decimal 
+hours_of_sunshine:decimal 
+average_wind:decimal

@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  location: 1
+  year: 1
+  month: 1
+  average_temperature: 9.99
+  average_high_temperature: 9.99
+  highest_temperature: 9.99
+  date_of_highest_temperature: 1
+  average_low_temperature: 9.99
+  lowest_temperature: 9.99
+  date_of_lowest_temperature: 1
+  average_humidity: 9.99
+  total_percipitation: 9.99
+  highest_percipitation: 9.99
+  date_of_highest_percipitation: 9.99
+  average_pressure: 9.99
+  average_cloud: 9.99
+  hours_of_sunshine: 9.99
+  average_wind: 9.99
+
+two:
+  location: 1
+  year: 1
+  month: 1
+  average_temperature: 9.99
+  average_high_temperature: 9.99
+  highest_temperature: 9.99
+  date_of_highest_temperature: 1
+  average_low_temperature: 9.99
+  lowest_temperature: 9.99
+  date_of_lowest_temperature: 1
+  average_humidity: 9.99
+  total_percipitation: 9.99
+  highest_percipitation: 9.99
+  date_of_highest_percipitation: 9.99
+  average_pressure: 9.99
+  average_cloud: 9.99
+  hours_of_sunshine: 9.99
+  average_wind: 9.99
