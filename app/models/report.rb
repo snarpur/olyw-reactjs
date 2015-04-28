@@ -3,16 +3,26 @@ class Report < ActiveRecord::Base
 
   attr_reader :nth_month_lowest, :nth_month_highest,:average_temperature_for_current_month
 
+  LOCATIONS = {
+    :reykjavik => 1,
+    :akureyri => 422
+  }
+  
+  def self.by_location(loacation_id)
+    where("location = ?",loacation_id)
+  end
+
+  
   def self.highest_temperature_for_month
-    by
+    
   end
   
   def self.by_month(month)
     where("month = ?", month)
   end
 
-  def self.by_year(month)
-    where("year = ?", month)
+  def self.by_year(year)
+    where("year = ?", year)
   end
   
   def self.average_temperature_for_month(month)
@@ -20,7 +30,7 @@ class Report < ActiveRecord::Base
   end
   
   def self.highest_temperature(month)
-    by_month(month).select(:year,:highest_temperature).maximum("higest_temperature")
+    by_month(month).select(:year,:highest_temperature).maximum("highest_temperature")
   end
 
   def self.lowest_temperature(month)
@@ -48,19 +58,19 @@ class Report < ActiveRecord::Base
   end
 
   def nth_month_highest
-    Report.higher_average_months(month,average_temperature).count
+    Report.by_location(location).higher_average_months(month,average_temperature).count
   end
 
   def nth_month_lowest
-    Report.lower_average_months(month,average_temperature).count
+    Report.by_location(location).lower_average_months(month,average_temperature).count
   end  
 
   def recent_months_higher
-    Report.higher_average_months(month,average_temperature).order("year DESC").limit(10).select(:year,:location,:average_temperature)
+    Report.by_location(location).higher_average_months(month,average_temperature).order("year DESC").limit(10).select(:year,:location,:average_temperature)
   end
   
   def recent_months_lower
-    Report.lower_average_months(month,average_temperature).order("year DESC").limit(10).select(:year,:location,:average_temperature)
+    Report.by_location(location).lower_average_months(month,average_temperature).order("year DESC").limit(10).select(:year,:location,:average_temperature)
   end
 
   

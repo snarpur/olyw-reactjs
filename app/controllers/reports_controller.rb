@@ -2,7 +2,7 @@ class ReportsController < ApplicationController
 
 
   def show
-    @report = Report.find_by_month_and_year(params[:month], Date.current.year)
+    @report = Report.by_location(params[:location]).by_year(Date.current.year).by_month(params[:month]).first
   end
 
 
